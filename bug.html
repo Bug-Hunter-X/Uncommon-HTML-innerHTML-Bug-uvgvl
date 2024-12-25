@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <script>
+    //Incorrect use of innerHTML leading to unexpected behavior
+    document.getElementById("myDiv").innerHTML = document.getElementById("myDiv").innerHTML + "<p>This paragraph should be added.</p>";
+    //The above line is incorrect in certain scenarios. In this example, it may appear to work but adding a <p> tag inside a <div> that already has innerHTML will result in a nested structure. This can become a bigger issue in more complex scenarios.
+  </script>
+</body>
+</html>
